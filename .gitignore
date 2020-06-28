@@ -32,6 +32,7 @@ venv
 .pub-cache/
 .pub/
 /build/
+.idea
 
 # Android related
 **/android/**/gradle-wrapper.jar
