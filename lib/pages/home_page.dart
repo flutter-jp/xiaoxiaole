@@ -75,18 +75,6 @@ class _HomePageState extends State<HomePage>
               ),
             ),
             Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: ShadowedText(
-                  text: 'by Didier Boelens',
-                  color: Colors.white,
-                  fontSize: 12,
-                  offset: Offset(1, 1),
-                ),
-              ),
-            ),
-            Align(
               alignment: Alignment.bottomCenter,
               child: AspectRatio(
                 aspectRatio: 1,
@@ -135,7 +123,7 @@ class _HomePageState extends State<HomePage>
                       Align(
                         alignment: Alignment.center,
                         child: ShadowedText(
-                          text: 'Flutter Crush',
+                          text: '三消游戏',
                           color: Colors.white,
                           fontSize: 26,
                           shadowOpacity: 1,

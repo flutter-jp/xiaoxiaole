@@ -115,7 +115,7 @@ class _GamePageState extends State<GamePage>
           onTapUp: _onPanEnd,
           child: Stack(
             children: <Widget>[
-              _buildAuthor(),
+//              _buildAuthor(),
               _buildMovesLeftPanel(orientation),
               _buildObjectivePanel(orientation),
               _buildBoard(),

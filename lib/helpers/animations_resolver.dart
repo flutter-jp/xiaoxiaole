@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_crush/bloc/game_bloc.dart';
 import 'package:flutter_crush/controllers/game_controller.dart';
 import 'package:flutter_crush/helpers/array_2d.dart';
@@ -34,14 +35,17 @@ class AnimationsResolver {
   // -1: forbidden (no cell or not movable tile)
   // 1:  tile is present
   Array2d<int> _state;
+
   Array2d<int> get resultingGridInTermsOfUse => _state;
 
   // _type contains the types of tiles in the grid after each move
   Array2d<TileType> _types;
+
   Array2d<TileType> get resultingGridInTermsOfTileTypes => _types;
 
   // _tiles contains the definitions of the tiles (type, depth, widget)
   Array2d<Tile> _tiles;
+
   Array2d<Tile> get resultingGridInTermsOfTiles => _tiles;
 
   // _names contains the tiles identities
@@ -59,6 +63,7 @@ class AnimationsResolver {
 
   // List of all cells, involved in the animations
   Set<RowCol> _involvedCells = Set<RowCol>();
+
   Set<RowCol> get involvedCells => _involvedCells;
 
   // Longuest delay for all animations
@@ -658,6 +663,7 @@ class AnimationsResolver {
           countMoves++;
         }
       }
+      debugPrint(countMoves.toString());
     }
     return longestDelay;
   }
