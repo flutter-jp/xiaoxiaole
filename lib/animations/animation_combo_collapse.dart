@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_crush/model/combo.dart';
 import 'package:flutter_crush/model/tile.dart';
-import 'package:flutter/material.dart';
 
 class AnimationComboCollapse extends StatefulWidget {
   AnimationComboCollapse({
@@ -8,7 +8,7 @@ class AnimationComboCollapse extends StatefulWidget {
     this.combo,
     this.resultingTile,
     this.onComplete,
-  }):super(key: key);
+  }) : super(key: key);
 
   final Combo combo;
   final VoidCallback onComplete;
@@ -18,30 +18,32 @@ class AnimationComboCollapse extends StatefulWidget {
   _AnimationComboCollapseState createState() => _AnimationComboCollapseState();
 }
 
-class _AnimationComboCollapseState extends State<AnimationComboCollapse> with SingleTickerProviderStateMixin {
+class _AnimationComboCollapseState extends State<AnimationComboCollapse>
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
-    _controller = AnimationController(duration: Duration(milliseconds: 300), vsync: this)
-    ..addListener((){
-      setState((){});
-    })
-    ..addStatusListener((AnimationStatus status){
-      if (status == AnimationStatus.completed){
-        if (widget.onComplete != null){
-          widget.onComplete();
-        }
-      }
-    });
+    _controller =
+        AnimationController(duration: Duration(milliseconds: 300), vsync: this)
+          ..addListener(() {
+            setState(() {});
+          })
+          ..addStatusListener((AnimationStatus status) {
+            if (status == AnimationStatus.completed) {
+              if (widget.onComplete != null) {
+                widget.onComplete();
+              }
+            }
+          });
 
     _controller.forward();
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _controller?.dispose();
     super.dispose();
   }
@@ -52,19 +54,19 @@ class _AnimationComboCollapseState extends State<AnimationComboCollapse> with Si
     final double destinationY = widget.resultingTile.y;
 
     // Tiles are collapsing at the position of the resulting tile
-    List<Widget> children = widget.combo.tiles.map((Tile tile){
+    List<Widget> children = widget.combo.tiles.map((Tile tile) {
       return Positioned(
-          left: tile.x + (1.0 - _controller.value) * (tile.x - destinationX),
-          top: tile.y + (1.0 - _controller.value) * (destinationY - tile.y),
-          child: Transform.scale(
-            scale: 1.0 - _controller.value,
-            child: tile.widget,
-          ),
-        );
+        left: tile.x + (1 - _controller.value) * (tile.x - destinationX),
+        top: tile.y + (1 - _controller.value) * (destinationY - tile.y),
+        child: Transform.scale(
+          scale: 1 - _controller.value,
+          child: tile.widget,
+        ),
+      );
     }).toList();
 
     // Display the resulting tile
-    children. add(
+    children.add(
       Positioned(
         left: destinationX,
         top: destinationY,

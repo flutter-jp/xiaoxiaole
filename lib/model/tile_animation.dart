@@ -5,7 +5,7 @@ import 'package:flutter_crush/model/tile.dart';
 /// TileAnimation
 ///
 /// Class which is used to register a Tile animation
-class TileAnimation{
+class TileAnimation {
   TileAnimation({
     this.animationType,
     this.delay,

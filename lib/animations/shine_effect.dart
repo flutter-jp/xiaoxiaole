@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 class ShineEffect extends StatefulWidget {
@@ -46,16 +47,16 @@ class _ShineEffectState extends State<ShineEffect>
           children: <Widget>[
             Positioned(
                 left: _shineController.value *
-                        (constraints.maxHeight + widget.offset.dx * 2.0) -
+                        (constraints.maxHeight + widget.offset.dx * 2) -
                     widget.offset.dx,
-                top: -widget.offset.dy / 2.0,
+                top: -widget.offset.dy / 2,
                 child: Opacity(
                   opacity: 0.3,
                   child: Transform.rotate(
-                    angle: 45.0 * math.pi / 180.0,
+                    angle: 45.0 * math.pi / 180,
                     child: Container(
-                      width: 50.0,
-                      height: 350.0,
+                      width: 50,
+                      height: 350,
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                             begin: Alignment.centerLeft,

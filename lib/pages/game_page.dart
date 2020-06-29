@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_crush/animations/animation_chain.dart';
 import 'package:flutter_crush/animations/animation_combo_collapse.dart';
 import 'package:flutter_crush/animations/animation_combo_three.dart';
@@ -20,7 +21,6 @@ import 'package:flutter_crush/model/combo.dart';
 import 'package:flutter_crush/model/level.dart';
 import 'package:flutter_crush/model/row_col.dart';
 import 'package:flutter_crush/model/tile.dart';
-import 'package:flutter/material.dart';
 
 class GamePage extends StatefulWidget {
   static Route<dynamic> route(Level level) {
@@ -134,12 +134,12 @@ class _GamePageState extends State<GamePage>
     return Align(
       alignment: Alignment.bottomLeft,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: ShadowedText(
           text: 'by Didier Boelens',
           color: Colors.white,
-          fontSize: 12.0,
-          offset: Offset(1.0, 1.0),
+          fontSize: 12,
+          offset: Offset(1, 1),
         ),
       ),
     );

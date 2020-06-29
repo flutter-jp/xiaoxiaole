@@ -22,12 +22,12 @@ class Combo {
   Tile commonTile;
 
   // Constructor
-  Combo(Chain horizontalChain, Chain verticalChain, int row, int col){
-    horizontalChain?.tiles?.forEach((Tile tile){
+  Combo(Chain horizontalChain, Chain verticalChain, int row, int col) {
+    horizontalChain?.tiles?.forEach((Tile tile) {
       _tiles.putIfAbsent(tile.hashCode, () => tile);
     });
-    verticalChain?.tiles?.forEach((Tile tile){
-      if (commonTile == null && _tiles.keys.contains(tile.hashCode)){
+    verticalChain?.tiles?.forEach((Tile tile) {
+      if (commonTile == null && _tiles.keys.contains(tile.hashCode)) {
         commonTile = tile;
       }
       _tiles.putIfAbsent(tile.hashCode, () => tile);
@@ -38,16 +38,16 @@ class Combo {
 
     // If the combo contains more than 3 tiles but is not the combination of both horizontal and vertical chains
     // we need to determine the tile which created the chain
-    if (total > 3 && commonTile == null){
-      _tiles.values.forEach((Tile tile){
-        if (tile.row == row && tile.col == col){
+    if (total > 3 && commonTile == null) {
+      _tiles.values.forEach((Tile tile) {
+        if (tile.row == row && tile.col == col) {
           commonTile = tile;
         }
       });
     }
 
     // Determine the type of the resulting tile (case of more than 3 tiles)
-    switch(total){
+    switch (total) {
       case 4:
         resultingTileType = TileType.flare;
         break;

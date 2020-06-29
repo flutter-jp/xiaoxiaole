@@ -40,11 +40,11 @@ class Array2d<T> {
   //
   // Clone this Array2d
   //
-  Array2d clone<T>(){
+  Array2d clone<T>() {
     Array2d<T> newArray2d = Array2d<T>(_height, _width);
 
-    for (int row = 0; row < _height; row++){
-      for (int col = 0; col < _width; col++){
+    for (int row = 0; row < _height; row++) {
+      for (int col = 0; col < _width; col++) {
         newArray2d[row][col] = array[row][col];
       }
     }

@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_crush/game_widgets/double_curved_container.dart';
 import 'package:flutter_crush/helpers/audio.dart';
 import 'package:flutter_crush/model/level.dart';
-import 'package:flutter/material.dart';
 
 class GameOverSplash extends StatefulWidget {
   GameOverSplash({
@@ -44,13 +44,13 @@ class _GameOverSplashState extends State<GameOverSplash>
       });
 
     _animationAppear = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
+      begin: 0,
+      end: 1,
     ).animate(
       CurvedAnimation(
         parent: _controller,
         curve: Interval(
-          0.0,
+          0,
           0.1,
           curve: Curves.easeIn,
         ),
@@ -84,7 +84,7 @@ class _GameOverSplashState extends State<GameOverSplash>
         color: Colors.transparent,
         child: DoubleCurvedContainer(
           width: screenSize.width,
-          height: 150.0,
+          height: 150,
           outerColor: darkColor,
           innerColor: lightColor,
           child: Container(
@@ -92,7 +92,7 @@ class _GameOverSplashState extends State<GameOverSplash>
             child: Center(
               child: Text(message,
                   style: TextStyle(
-                    fontSize: 50.0,
+                    fontSize: 50,
                     color: Colors.white,
                   )),
             ),
@@ -101,7 +101,7 @@ class _GameOverSplashState extends State<GameOverSplash>
       ),
       builder: (BuildContext context, Widget child) {
         return Positioned(
-          left: 0.0,
+          left: 0,
           top: 150.0 + 100.0 * _animationAppear.value,
           child: child,
         );

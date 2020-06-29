@@ -22,7 +22,7 @@ class Chain {
   });
 
   // Add a tile to the list of unique ones belonging to the chain
-  void addTile(Tile tile){
+  void addTile(Tile tile) {
     _tiles.putIfAbsent(tile.hashCode, () => tile);
     length = _tiles.length;
   }
@@ -35,4 +35,3 @@ enum ChainType {
   horizontal,
   vertical,
 }
-

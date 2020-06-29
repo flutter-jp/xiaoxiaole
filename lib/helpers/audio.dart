@@ -20,6 +20,7 @@ class Audio {
       'audio/lost.wav',
     ]);
   }
+
   static play() async {
     AudioPlayer player = AudioPlayer();
     await player.play('assets/audio/swap.wav', isLocal: true);

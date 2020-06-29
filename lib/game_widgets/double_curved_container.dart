@@ -22,16 +22,16 @@ class DoubleCurvedContainer extends StatelessWidget {
       clipper: _CurvedClipper(),
       child: Container(
         width: width,
-        height: 150.0,
+        height: 150,
         color: Colors.black.withOpacity(0.3),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 6.0),
+          padding: const EdgeInsets.symmetric(vertical: 6),
           child: ClipPath(
             clipper: _CurvedClipper(),
             child: Container(
               color: outerColor,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8),
                 child: ClipPath(
                   clipper: _CurvedClipper(),
                   child: Container(
@@ -56,10 +56,10 @@ class _CurvedClipper extends CustomClipper<Path> {
 
     Path path = Path();
 
-    path.moveTo(0.0, heightStart);
-    path.quadraticBezierTo(size.width / 2.0, 0.0, size.width, heightStart);
+    path.moveTo(0, heightStart);
+    path.quadraticBezierTo(size.width / 2, 0, size.width, heightStart);
     path.lineTo(size.width, heightEnd);
-    path.quadraticBezierTo(size.width / 2.0, size.height, 0.0, heightEnd);
+    path.quadraticBezierTo(size.width / 2, size.height, 0, heightEnd);
     path.close();
 
     return path;

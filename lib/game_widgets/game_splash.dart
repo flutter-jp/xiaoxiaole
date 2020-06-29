@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_crush/game_widgets/double_curved_container.dart';
 import 'package:flutter_crush/game_widgets/objective_item.dart';
 import 'package:flutter_crush/helpers/audio.dart';
 import 'package:flutter_crush/model/level.dart';
 import 'package:flutter_crush/model/objective.dart';
-import 'package:flutter/material.dart';
 
 class GameSplash extends StatefulWidget {
   GameSplash({
@@ -44,13 +44,13 @@ class _GameSplashState extends State<GameSplash>
       });
 
     _animationAppear = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
+      begin: 0,
+      end: 1,
     ).animate(
       CurvedAnimation(
         parent: _controller,
         curve: Interval(
-          0.0,
+          0,
           0.1,
           curve: Curves.easeIn,
         ),
@@ -80,7 +80,7 @@ class _GameSplashState extends State<GameSplash>
     List<Widget> objectiveWidgets =
         widget.level.objectives.map((Objective obj) {
       return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 4.0),
+        padding: const EdgeInsets.symmetric(horizontal: 4),
         child: ObjectiveItem(objective: obj, level: widget.level),
       );
     }).toList();
@@ -91,7 +91,7 @@ class _GameSplashState extends State<GameSplash>
         color: Colors.transparent,
         child: DoubleCurvedContainer(
           width: screenSize.width,
-          height: 150.0,
+          height: 150,
           outerColor: Colors.blue[700],
           innerColor: Colors.blue,
           child: Center(
@@ -102,9 +102,9 @@ class _GameSplashState extends State<GameSplash>
                 Container(
                     child: Text(
                   'Level:  ${widget.level.index}',
-                  style: TextStyle(fontSize: 24.0, color: Colors.white),
+                  style: TextStyle(fontSize: 24, color: Colors.white),
                 )),
-                SizedBox(height: 8.0),
+                SizedBox(height: 8),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: objectiveWidgets,
@@ -116,7 +116,7 @@ class _GameSplashState extends State<GameSplash>
       ),
       builder: (BuildContext context, Widget child) {
         return Positioned(
-          left: 0.0,
+          left: 0,
           top: 150.0 + 100.0 * _animationAppear.value,
           child: child,
         );

@@ -8,7 +8,7 @@ class AnimationSwapTiles extends StatefulWidget {
     this.downTile,
     this.onComplete,
     this.swapAllowed,
-  }): super(key: key);
+  }) : super(key: key);
 
   final Tile upTile;
   final Tile downTile;
@@ -19,41 +19,44 @@ class AnimationSwapTiles extends StatefulWidget {
   _AnimationSwapTilesState createState() => _AnimationSwapTilesState();
 }
 
-class _AnimationSwapTilesState extends State<AnimationSwapTiles> with SingleTickerProviderStateMixin {
+class _AnimationSwapTilesState extends State<AnimationSwapTiles>
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
 
     _controller = AnimationController(
       duration: Duration(milliseconds: 300),
       vsync: this,
-    )..addListener(() {
-      setState(() {});
-    })..addStatusListener((AnimationStatus status) {
-      if (status == AnimationStatus.completed) {
-        if (!widget.swapAllowed){
-          _controller.reverse();
-        } else {
+    )
+      ..addListener(() {
+        setState(() {});
+      })
+      ..addStatusListener((AnimationStatus status) {
+        if (status == AnimationStatus.completed) {
+          if (!widget.swapAllowed) {
+            _controller.reverse();
+          } else {
+            if (widget.onComplete != null) {
+              widget.onComplete();
+            }
+          }
+        }
+
+        if (status == AnimationStatus.dismissed) {
           if (widget.onComplete != null) {
             widget.onComplete();
           }
         }
-      }
-
-      if (status == AnimationStatus.dismissed){
-          if (widget.onComplete != null) {
-            widget.onComplete();
-          }
-      }
-    });
+      });
 
     _controller.forward();
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _controller?.dispose();
     super.dispose();
   }

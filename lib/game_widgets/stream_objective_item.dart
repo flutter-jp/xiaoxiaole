@@ -1,17 +1,17 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_crush/bloc/bloc_provider.dart';
 import 'package:flutter_crush/bloc/game_bloc.dart';
 import 'package:flutter_crush/bloc/objective_bloc.dart';
 import 'package:flutter_crush/model/objective.dart';
 import 'package:flutter_crush/model/tile.dart';
-import 'package:flutter/material.dart';
 
 class StreamObjectiveItem extends StatefulWidget {
   StreamObjectiveItem({
     Key key,
     this.objective,
-  }): super(key: key);
+  }) : super(key: key);
 
   final Objective objective;
 
@@ -34,13 +34,13 @@ class StreamObjectiveItemState extends State<StreamObjectiveItem> {
   StreamSubscription _subscription;
 
   @override
-  void didChangeDependencies(){
+  void didChangeDependencies() {
     super.didChangeDependencies();
 
     // Now that the context is available, retrieve the gameBloc
     gameBloc = BlocProvider.of<GameBloc>(context);
     _createBloc();
-  } 
+  }
 
   ///
   /// As Widgets can be changed by the framework at any time,
@@ -55,7 +55,7 @@ class StreamObjectiveItemState extends State<StreamObjectiveItem> {
   }
 
   @override
-  void dispose(){
+  void dispose() {
     _disposeBloc();
     super.dispose();
   }
@@ -79,7 +79,8 @@ class StreamObjectiveItemState extends State<StreamObjectiveItem> {
     //
     // Trick to get the image of the tile
     //
-    Tile tile = Tile(type: widget.objective.type, level: gameBloc.gameController.level);
+    Tile tile =
+        Tile(type: widget.objective.type, level: gameBloc.gameController.level);
     tile.build();
 
     return Container(
@@ -88,20 +89,19 @@ class StreamObjectiveItemState extends State<StreamObjectiveItem> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(
-            width: 32.0,
-            height: 32.0,
+            width: 32,
+            height: 32,
             child: tile.widget,
           ),
           StreamBuilder<int>(
-            initialData: widget.objective.count,
-            stream: _bloc.objectiveCounter,
-            builder: (BuildContext context, AsyncSnapshot<int> snapshot){
-              return Text(
-                '${snapshot.data}',
-                style: TextStyle(color: Colors.black),
-              );
-            }
-          ),
+              initialData: widget.objective.count,
+              stream: _bloc.objectiveCounter,
+              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+                return Text(
+                  '${snapshot.data}',
+                  style: TextStyle(color: Colors.black),
+                );
+              }),
         ],
       ),
     );

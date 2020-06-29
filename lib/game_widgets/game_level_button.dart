@@ -4,9 +4,9 @@ class GameLevelButton extends StatelessWidget {
   GameLevelButton({
     Key key,
     this.text: '',
-    this.width: 60.0,
-    this.height: 60.0,
-    this.borderRadius: 50.0,
+    this.width: 60,
+    this.height: 60,
+    this.borderRadius: 50,
     @required this.onTap,
   }) : super(key: key);
 
@@ -40,10 +40,10 @@ class GameLevelButton extends StatelessWidget {
       child: Center(
         child: Padding(
           padding: const EdgeInsets.only(
-            top: 50.0,
+            top: 50,
           ),
           child: Container(
-            padding: const EdgeInsets.all(3.0),
+            padding: const EdgeInsets.all(3),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(borderRadius),
@@ -53,8 +53,8 @@ class GameLevelButton extends StatelessWidget {
               ),
               boxShadow: [
                 BoxShadow(
-                  blurRadius: 10.0,
-                  offset: Offset(5.0, 5.0),
+                  blurRadius: 10,
+                  offset: Offset(5, 5),
                   color: Color.fromRGBO(0, 0, 0, 0.3),
                 ),
               ],
@@ -72,8 +72,8 @@ class GameLevelButton extends StatelessWidget {
                 ),
                 boxShadow: [
                   BoxShadow(
-                    blurRadius: 1.0,
-                    offset: Offset(1.0, 1.5),
+                    blurRadius: 1,
+                    offset: Offset(1, 1.5),
                     color: Color.fromRGBO(0, 0, 0, 0.3),
                   ),
                 ],
@@ -82,7 +82,7 @@ class GameLevelButton extends StatelessWidget {
               child: Center(
                 child: Text(
                   text,
-                  style: TextStyle(color: Colors.black, fontSize: 16.0),
+                  style: TextStyle(color: Colors.black, fontSize: 16),
                 ),
               ),
             ),
