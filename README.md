@@ -16,11 +16,8 @@
 ![level](./assets/screenshots/level.jpg)
 ![game](./assets/screenshots/game.jpg)
 
-## 视频演示
+## 视频演示(点击观看)
 [![Watch the video](https://github.com/flutter-jp/xiaoxiaole/blob/master/assets/screenshots/level.jpg)](https://image.xiaomo.info/github/flutter_crush.mp4)
-
-
-如果视频未显示可以点击打开查看演示
 
 ## 本项目改动
 - 升级了flutter和dart的版本
