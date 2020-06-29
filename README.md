@@ -17,7 +17,7 @@
 ![game](./assets/screenshots/game.jpg)
 
 ## 视频演示
-<video src="./flutter_crush.mp4" controls="controls"></video>
+<video src="./flutter_crush.mp4" width="800px" height="600px" controls="controls"></video>
 
 ## 本项目改动
 - 升级了flutter和dart的版本
