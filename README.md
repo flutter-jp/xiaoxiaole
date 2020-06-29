@@ -17,8 +17,7 @@
 ![game](./assets/screenshots/game.jpg)
 
 ## 视频演示
-<video src="./flutter_crush.mp4" width="800px" height="600px" controls="controls"></video>
-[![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](./flutter_crush.mp4)
+[![Watch the video](./assets/screenshots/level.png)](https://image.xiaomo.info/github/flutter_crush.mp4)
 
 
 如果视频未显示可以点击打开查看演示
